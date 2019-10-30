@@ -1,13 +1,22 @@
 import logging
 from pprint import pprint, pformat
 
-logging.basicConfig(format="%(levelname)-8s:%(filename)s.%(funcName)20s >>   %(message)s")
+logging.basicConfig()
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
+
+from anikattu.keyedlist import KeyedList
+
 class Configurable:
     def __init__(self, config):
-        self.config = config
+        self.C = KeyedList(config)
         
-class Experiment:
-    
+class Experiment(Configurable):
+    def __init__(self, config, model, dataset):
+        super().__init__(config)
+        self.model = model
+        self.dataset = dataset
+
+    def run(self):
+        self.model.do_train()
