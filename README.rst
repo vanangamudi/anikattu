@@ -11,7 +11,7 @@ anikattu
 
 library to ease running DL experiments
 
-* Free software: MIT license
+* Free software: GPL license
 * Documentation: (COMING SOON!) https://anikattu.readthedocs.org.
 
 Features
